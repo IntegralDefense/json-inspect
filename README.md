@@ -12,7 +12,7 @@ SIEM ingestion.
 Create your virtual environment and install dependencies.
 
 ```bash
-$ git clone thisrepo.git
+$ git clone https://github.com/IntegralDefense/json-inspect.git
 $ cd thisrepo
 $ python3 -m venv venv
 $ source venv/bin/activate
@@ -379,5 +379,3 @@ Using the Python REPL, here's another example parsin through logs from
 a high-volume data source.
 
 ![Large volume example image](REPL-Large-Volume.png "Large volume example")
-
-The output in the Python REPL would lo
