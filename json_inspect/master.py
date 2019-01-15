@@ -186,7 +186,6 @@ class Master:
 
         logger.info(f"Made models/minions from {len(json_items)} source logs events.")
 
-
     def _make_string(self):
         """ Helper method to generate minions from a JSON-serializable
             string.
@@ -235,7 +234,7 @@ class Master:
             hash_: minion.model(resolution) for hash_, minion in uniques.items()
         }
         logger.info(f"Model data:\n {json.dumps(unique_models, indent=indent)}")
-    
+
     def print_unique_data(self, resolution=0, indent=None):
         """Prints the hash and data of unique logs for the specified
         resolution.
@@ -300,7 +299,7 @@ class Master:
                     if hash_ not in master_uniques.keys()
                 }
                 master_uniques = {**master_uniques, **fresh_uniques}
-            
+
             logger.info(f"Printing {len(master_uniques.values())} unique log data.")
 
             for minion in master_uniques.values():

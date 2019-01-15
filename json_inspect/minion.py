@@ -369,7 +369,7 @@ class ListMinion(Minion):
             # If resolution is >2 from this tier, return the data
             # like normal.
             return [item.data(resolution) for item in self._model]
-        
+
         # Base case - no more children
         return self.label
 
@@ -420,7 +420,7 @@ class ListMinion(Minion):
 
         # Base case - no more children.
         return self.label
-    
+
     def get_summary(self):
         types = set()
         for minion in self._model:
