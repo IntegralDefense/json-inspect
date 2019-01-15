@@ -1,6 +1,6 @@
 # JSON Inspector
 
-An expiramental tool to compare and flatten json-formatted logs for
+An experimental tool to compare and flatten json-formatted logs for
 SIEM ingestion.
 
 ## Prerequisites
