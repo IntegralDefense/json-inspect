@@ -363,15 +363,14 @@ class ListMinion(Minion):
             str: Label of the current Minion
         """
         if resolution >= self.tier:
-            # If the next tier is the end point, then we want to sum
-            # up the values in this list. Instead of listing six
-            # dictionaries, we would just list 'DICT(s)' so that
-            # the list content is not different than another list
-            # with eight dictionaries.
-            if resolution == self.tier + 1:
-                # TODO - Only get summary when tier + 1
+            # Only summarize if the next tier is the final tier.
+            if resolution == self.tier:
                 return self.get_summary()
+            # If resolution is >2 from this tier, return the data
+            # like normal.
             return [item.data(resolution) for item in self._model]
+        
+        # Base case - no more children
         return self.label
 
     def _recursive_model(self, resolution):
@@ -406,13 +405,20 @@ class ListMinion(Minion):
 
         if resolution >= self.tier:
             for minion in self._model:
+
                 if not minion.edge:
-                    # TODO - Only get summary when tier + 1
-                    return self.get_summary()
-                    
+                    # Only summarize if the next tier is the final tier
+                    if resolution == self.tier:
+                        return self.get_summary()
+                    # If resolution is >2 from this tier, return the
+                    # models like normal.
+                    return [item.model(resolution) for item in self._model]
+
             if not self._model:
                 return "EMPTY_{}".format(self.label)
             return ["edges_only"]
+
+        # Base case - no more children.
         return self.label
     
     def get_summary(self):

@@ -1,0 +1,2 @@
+{"key1":"MyString","key2":12345,"key3":["ListItem",54321,{"NestedKey1":"NestedValue"},true,null,["InnerList","MoreInnerList"]],"key4":{"NestedKey2": "SomeValue"}}
+{"key1":"MyString","key2":12345,"key3":["ListItem",54321,"NotNestedValue",false,null,["InnerList","MoreInnerList"]],"key4":{"NestedKey2": "SomeValue"}}
