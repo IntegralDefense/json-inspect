@@ -28,8 +28,6 @@ setuptools.setup(
         "Programming Language :: Python :: 3.7",
     ],
     keywords="logs",
+)
 
 # TO BE CONTINUED...
-
-
-)
