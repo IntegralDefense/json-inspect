@@ -274,7 +274,7 @@ class Master:
 
     def write_unique_data_recursive(self, output_file, resolution=0, indent=None):
         """Writes unique logs to file from the resolution specified.
-        
+
         This will start with the specified resolution, log
         the uniques, and then do one for resolution -= 1. This should
         write only logs that were found to be unique in at least one
