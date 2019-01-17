@@ -102,8 +102,8 @@ class MinionGarage:
         """
 
         deepest = 0
-        for minion in self._list:
-            minion_depth = minion.depth
+        for minion_ in self._list:
+            minion_depth = minion_.depth
             if not (minion_depth > deepest):
                 continue
             deepest = minion_depth
@@ -274,7 +274,7 @@ class Master:
 
     def write_unique_data_recursive(self, output_file, resolution=0, indent=None):
         """Writes unique logs to file from the resolution specified.
-        
+
         This will start with the specified resolution, log
         the uniques, and then do one for resolution -= 1. This should
         write only logs that were found to be unique in at least one
@@ -302,8 +302,8 @@ class Master:
 
             logger.info(f"Printing {len(master_uniques.values())} unique log data.")
 
-            for minion in master_uniques.values():
-                json_string = json.dumps(minion.data(resolution), indent=indent)
+            for minion_ in master_uniques.values():
+                json_string = json.dumps(minion_.data(resolution), indent=indent)
                 wf.write("{}\n".format(json_string))
 
     def _gather_uniques(self, resolution=0):

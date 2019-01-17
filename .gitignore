@@ -116,3 +116,6 @@ dmypy.json
 
 # VSCode
 .vscode
+
+# LocalLogs
+*.ignore.json
